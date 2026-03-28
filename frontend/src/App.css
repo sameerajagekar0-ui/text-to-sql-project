@@ -1,0 +1,368 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body, html, #root {
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(135deg,#0f172a,#020617);
+}
+
+/* =========================================================
+   APP CONTAINER
+========================================================= */
+.app {
+    width: 96%;
+    max-width: 1500px;
+    height: 92vh;
+    margin: auto;
+    margin-top: 20px;
+    background: #020617;
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0,0,0,.8);
+}
+
+/* =========================================================
+   SIDEBAR – DATABASE
+========================================================= */
+.sidebar {
+    width: 20%;
+    padding: 18px;
+    border-right: 1px solid #1e293b;
+}
+
+.sidebar h2 {
+    color: #38bdf8;
+    margin-bottom: 14px;
+}
+
+.sidebar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #1e293b;
+    color: #fff;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg,#2563eb,#38bdf8);
+    color: white;
+    font-weight: 600;
+}
+
+.status {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* =========================================================
+   CHAT PANEL
+========================================================= */
+.chat {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 14px;
+    text-align: center;
+    background: linear-gradient(90deg,#2563eb,#38bdf8);
+    color: white;
+    font-weight: 600;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+/* MESSAGE STYLES */
+.message {
+    margin-bottom: 14px;
+}
+
+.user {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    border-radius: 12px 12px 2px 12px;
+    max-width: 75%;
+    margin-left: auto;
+}
+
+.bot {
+    background: #1e293b;
+    color: #e5e7eb;
+    padding: 12px;
+    border-radius: 12px 12px 12px 2px;
+    max-width: 85%;
+    white-space: pre-wrap;
+}
+
+/* =========================================================
+   FOOTER INPUT
+========================================================= */
+.footer {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #1e293b;
+}
+
+.footer input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+}
+
+.footer button {
+    margin-left: 8px;
+    padding: 10px 16px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg,#2563eb,#38bdf8);
+    color: white;
+}
+
+/* =========================================================
+   SQL PANEL
+========================================================= */
+.sql-panel {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #1e293b;
+}
+
+/* SQL HEADER */
+.sql-header {
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #22c55e;
+    font-weight: 600;
+    border-bottom: 1px solid #1e293b;
+}
+
+/* SQL BODY */
+.sql-body {
+    padding: 14px;
+    overflow-y: auto;
+}
+
+.sql-body pre {
+    background: #020617;
+    color: #22c55e;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    min-height: 120px;
+
+    /* FIXES */
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* SQL ACTION BUTTONS */
+.sql-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.sql-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.execute-btn {
+    background: linear-gradient(90deg,#16a34a,#22c55e);
+    color: white;
+}
+
+.copy-btn {
+    background: #2563eb;
+    color: white;
+}
+
+/* =========================================================
+   RESULT TABLE
+========================================================= */
+.result-panel {
+    margin-top: 16px;
+}
+
+.result-panel h3 {
+    color: #38bdf8;
+    margin-bottom: 8px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    max-height: 260px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #020617;
+}
+
+th, td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #1e293b;
+    font-size: 13px;
+}
+
+th {
+    background: #1e293b;
+    color: #38bdf8;
+    position: sticky;
+    top: 0;
+}
+
+td {
+    color: #e5e7eb;
+}
+
+/* =========================================================
+   SCROLLBAR (OPTIONAL NICE UI)
+========================================================= */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 10px;
+}
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+/* 🔵 Tablets (iPad, Surface) */
+@media (max-width: 1024px) {
+    .app {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .chat {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .sql-panel {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #1e293b;
+    }
+}
+.cursor {
+  display: inline-block;
+  width: 5px;
+  background: #fff;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+/* 🔴 Mobile Devices (iPhone, Pixel, Samsung) */
+@media (max-width: 768px) {
+    .app {
+        flex-direction: column;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .sidebar {
+        padding: 12px;
+    }
+
+    .chat-body {
+        padding: 10px;
+    }
+
+    .footer input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .footer button {
+        padding: 8px 12px;
+    }
+
+    .sql-body {
+        padding: 10px;
+    }
+
+    .sql-body pre {
+        font-size: 12px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+/* 🟢 Small Mobile (iPhone SE, very small screens) */
+@media (max-width: 480px) {
+    .header {
+        font-size: 14px;
+    }
+
+    .sidebar h2 {
+        font-size: 16px;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    .footer input {
+        font-size: 13px;
+    }
+
+    .sql-header {
+        font-size: 14px;
+    }
+}
