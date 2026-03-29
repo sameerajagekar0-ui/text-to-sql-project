@@ -88,7 +88,7 @@ def validate_sql(sql: str) -> None:
 # 🧠 MAIN FUNCTION
 # =========================================================
 
-def chat_with_db(user_input: str, top_k: int = 10) -> Dict[str, Any]:
+def chat_with_db(user_input: str, top_k: int = 100) -> Dict[str, Any]:
     """
     Converts natural language → SQL → executes → returns answer + table
     """
